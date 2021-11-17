@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="640.0" style="-fx-background-color: #f8f9fa;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sms.views.InscriptionController">
+   <children>
+      <GridPane prefHeight="505.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="148.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="430.0" minHeight="10.0" prefHeight="357.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="116.0" prefWidth="640.0">
+               <children>
+                  <TextField fx:id="txtNomComplet" layoutX="26.0" layoutY="78.0" prefHeight="25.0" prefWidth="272.0" promptText="Nom et Prenom" />
+                  <Button layoutX="524.0" layoutY="112.0" mnemonicParsing="false" onAction="#addInscription" style="-fx-background-color: #2196f3;" text="Enregistrer" textFill="#f8f9fa">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txtMatricule" layoutX="25.0" layoutY="20.0" prefHeight="25.0" prefWidth="272.0" promptText="Matricule" />
+                  <TextField fx:id="txtTuteur" layoutX="355.0" layoutY="18.0" prefHeight="25.0" prefWidth="249.0" promptText="Tuteur" />
+                  <ComboBox fx:id="cboClasse" layoutX="355.0" layoutY="74.0" onAction="#handleShowEtudiantByClasse" prefHeight="25.0" prefWidth="249.0" promptText="Classe" style="-fx-background-color: #2196f3;" />
+                  <Button layoutX="439.0" layoutY="113.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: #5a6268;" text="Annuler" textFill="#f8f9fa">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <FontAwesomeIcon fill="#2196f3" glyphName="SEARCH" layoutX="302.0" layoutY="38.0" onMouseClicked="#handleSearchEtudiant" size="1.8em" />
+                  <Label fx:id="lblErrorMatricule" layoutX="26.0" layoutY="48.0" prefHeight="17.0" prefWidth="272.0" text="Label" textFill="#ee1313" />
+                  <Label fx:id="lblErrorNomPrenom" layoutX="25.0" layoutY="112.0" prefHeight="17.0" prefWidth="272.0" text="Label" textFill="#ee1313" />
+                  <Label fx:id="lblErrorTuteur" layoutX="355.0" layoutY="48.0" prefHeight="17.0" prefWidth="249.0" text="Label" textFill="#ee1313" />
+                  <TextField fx:id="txtID" layoutX="355.0" layoutY="112.0" prefHeight="17.0" prefWidth="41.0" text="0" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tblInscription" onMouseClicked="#handleSearchEtudiant" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="tblcMatricule" prefWidth="117.0" text="Matricule" />
+                <TableColumn fx:id="tblcNomPrenom" minWidth="0.0" prefWidth="221.0" text="Nom et Prenom" />
+                  <TableColumn fx:id="tblcClasse" minWidth="0.0" prefWidth="105.0" text="Classe" />
+                  <TableColumn minWidth="0.0" prefWidth="190.0" text="Actions" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

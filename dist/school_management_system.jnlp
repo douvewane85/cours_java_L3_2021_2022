@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="school_management_system.jnlp">
+  <information>
+    <title>school_management_system</title>
+    <vendor>USER</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
+    <jar href="lib\jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.21.jar" size="2397321" download="eager" />
+    <jar href="school_management_system.jar" size="46995" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="sms.Main"  name="school_management_system" />
+  <update check="always"/>
+</jnlp>
